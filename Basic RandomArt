@@ -1,0 +1,45 @@
+import java.awt.*;
+import java.awt.event.*;
+import javax.swing.*;
+public class testRandomartFromStandford extends JFrame{
+  public testRandomartFromStandford(){
+    setTitle("Random art");
+    setPreferredSize(new Dimension(400,400));
+    setVisible(1==1);
+    pack();
+    add(new artPanel());
+  }
+  
+  public static void main(String[] args){
+    new testRandomartFromStandford();
+  }
+}
+
+class artPanel extends JPanel{
+  public artPanel(){ 
+  }
+  
+  public void paint(Graphics g){
+    double gray  ;
+    for(int i = 0 ; i < 400 ; i++){
+      for(int j = 0 ; j < 400 ; j++){
+        double x = ((i+1)/200.0)-1;
+        double y = ((j+1)/200.0)-1;
+        
+        double red = Math.sin(Math.PI * avg((((Math.cos(Math.PI * (Math.sin(Math.PI * Math.cos(Math.PI * y)) * avg(avg(x, x), Math.sin(Math.PI * y)))) * avg(Math.sin(Math.PI * (Math.sin(Math.PI * y) * (y * x))), Math.cos(Math.PI * Math.cos(Math.PI * (y * y))))) * Math.sin(Math.PI * (Math.sin(Math.PI * (Math.sin(Math.PI * y) * Math.sin(Math.PI * y))) * Math.cos(Math.PI * ((y * y) * Math.sin(Math.PI * y)))))) * Math.sin(Math.PI * avg(Math.cos(Math.PI * avg(((y * x) * (x * x)), Math.sin(Math.PI * (y * x)))), Math.sin(Math.PI * avg(avg(Math.sin(Math.PI * x), avg(x, x)), Math.sin(Math.PI * avg(x, y))))))), Math.cos(Math.PI * Math.cos(Math.PI * avg(Math.sin(Math.PI * Math.sin(Math.PI * avg((x * x), (x * x)))), Math.sin(Math.PI * Math.sin(Math.PI * Math.sin(Math.PI * Math.sin(Math.PI * y)))))))));
+        double green = Math.sin(Math.PI * ((avg(avg(Math.cos(Math.PI * (Math.cos(Math.PI * Math.cos(Math.PI * x)) * (Math.cos(Math.PI * x) * avg(y, x)))), ((Math.cos(Math.PI * Math.cos(Math.PI * y)) * (Math.cos(Math.PI * x) * (x * y))) * Math.sin(Math.PI * Math.sin(Math.PI * avg(y, y))))), Math.cos(Math.PI * (avg(Math.sin(Math.PI * Math.sin(Math.PI * x)), Math.sin(Math.PI * Math.sin(Math.PI * x))) * Math.sin(Math.PI * Math.sin(Math.PI * (x * y)))))) * avg((avg(Math.cos(Math.PI * Math.sin(Math.PI * Math.cos(Math.PI * x))), avg((Math.sin(Math.PI * x) * Math.cos(Math.PI * y)), avg(Math.cos(Math.PI * x), Math.cos(Math.PI * x)))) * avg(avg(Math.sin(Math.PI * Math.cos(Math.PI * x)), Math.sin(Math.PI * Math.sin(Math.PI * x))), (avg(Math.cos(Math.PI * x), avg(y, x)) * avg(Math.sin(Math.PI * y), Math.sin(Math.PI * x))))), (Math.cos(Math.PI * Math.cos(Math.PI * (avg(y, y) * (y * x)))) * Math.cos(Math.PI * Math.cos(Math.PI * Math.sin(Math.PI * avg(x, x))))))) * Math.sin(Math.PI * avg(avg(Math.sin(Math.PI * Math.cos(Math.PI * Math.sin(Math.PI * Math.cos(Math.PI * x)))), avg(Math.sin(Math.PI * Math.cos(Math.PI * Math.cos(Math.PI * y))), ((Math.sin(Math.PI * y) * (x * y)) * Math.cos(Math.PI * (y * y))))), Math.cos(Math.PI * avg(((Math.cos(Math.PI * y) * (y * y)) * avg(Math.sin(Math.PI * y), Math.cos(Math.PI * y))), (((x * x) * avg(y, x)) * Math.cos(Math.PI * Math.sin(Math.PI * x)))))))));
+        double blue = avg(Math.sin(Math.PI * (avg(Math.cos(Math.PI * avg((Math.cos(Math.PI * (x * x)) * Math.cos(Math.PI * (x * y))), avg(avg((x * x), avg(y, y)), avg(Math.cos(Math.PI * y), Math.cos(Math.PI * x))))), avg(avg(avg((Math.sin(Math.PI * y) * (x * y)), Math.sin(Math.PI * (x * x))), avg(((x * x) * Math.sin(Math.PI * y)), (avg(x, x) * Math.sin(Math.PI * y)))), avg((Math.cos(Math.PI * Math.sin(Math.PI * y)) * Math.cos(Math.PI * avg(x, x))), Math.sin(Math.PI * avg(Math.sin(Math.PI * y), Math.sin(Math.PI * y)))))) * Math.cos(Math.PI * avg(avg(avg(Math.sin(Math.PI * (x * x)), avg(Math.sin(Math.PI * y), Math.sin(Math.PI * x))), Math.cos(Math.PI * avg(Math.cos(Math.PI * y), avg(y, x)))), (((avg(x, y) * Math.cos(Math.PI * x)) * Math.cos(Math.PI * avg(y, x))) * avg(Math.cos(Math.PI * (y * x)), ((x * x) * (y * x)))))))), avg(((((Math.sin(Math.PI * Math.sin(Math.PI * avg(x, x))) * avg(avg(Math.sin(Math.PI * y), Math.sin(Math.PI * y)), avg(avg(x, x), Math.cos(Math.PI * y)))) * Math.sin(Math.PI * Math.sin(Math.PI * Math.sin(Math.PI * (y * y))))) * avg(Math.cos(Math.PI * avg(avg(avg(x, y), (y * x)), Math.cos(Math.PI * Math.sin(Math.PI * x)))), (Math.sin(Math.PI * Math.sin(Math.PI * Math.sin(Math.PI * x))) * Math.cos(Math.PI * ((y * y) * Math.cos(Math.PI * x)))))) * avg(Math.cos(Math.PI * Math.cos(Math.PI * Math.sin(Math.PI * Math.cos(Math.PI * avg(x, y))))), (Math.sin(Math.PI * (Math.cos(Math.PI * avg(y, x)) * Math.sin(Math.PI * Math.cos(Math.PI * x)))) * ((Math.sin(Math.PI * Math.cos(Math.PI * y)) * avg(avg(x, x), Math.cos(Math.PI * x))) * avg((Math.sin(Math.PI * x) * avg(y, x)), Math.sin(Math.PI * Math.sin(Math.PI * x))))))), ((Math.cos(Math.PI * Math.cos(Math.PI * (Math.sin(Math.PI * (y * y)) * Math.cos(Math.PI * Math.cos(Math.PI * x))))) * avg(Math.sin(Math.PI * avg(Math.cos(Math.PI * Math.sin(Math.PI * y)), (Math.cos(Math.PI * x) * avg(x, x)))), Math.cos(Math.PI * Math.cos(Math.PI * Math.cos(Math.PI * avg(x, y)))))) * Math.sin(Math.PI * (avg((Math.cos(Math.PI * (y * y)) * Math.cos(Math.PI * Math.sin(Math.PI * y))), avg(((x * x) * Math.sin(Math.PI * x)), Math.cos(Math.PI * Math.sin(Math.PI * y)))) * avg(Math.sin(Math.PI * (avg(y, x) * avg(x, x))), Math.cos(Math.PI * avg((y * y), avg(y, y)))))))));
+        
+        
+        
+        g.setColor(new Color((int)((red+1)*255/2),(int)((green+1)*255/2),(int)((blue+1)*255/2)));
+        g.fillRect(i,j,1,1);
+      }
+      
+    }
+  }
+  public double avg(double x,double y){
+    return (x+y)/2;
+  }
+}
+
