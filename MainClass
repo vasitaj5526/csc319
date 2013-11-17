@@ -1,0 +1,41 @@
+import java.awt.*;
+import java.awt.event.*;
+import javax.swing.*;
+
+/**
+ * Write a description of class Main here.
+ * 
+ * @author (your name) 
+ * @version (a version number or a date)
+ */
+public class Main extends JFrame
+{
+    // instance variables - replace the example below with your own
+    private ArtPanel mainPanel;
+    private ButtonPanel buttonPanel;
+
+    /**
+     * Constructor for objects of class Main
+     */
+    public Main()
+    {
+        // initialise instance variables
+        setTitle("Random Art");
+        mainPanel = new ArtPanel();
+        buttonPanel = new ButtonPanel();
+        setVisible(true);
+        add(mainPanel,BorderLayout.CENTER);
+        add(buttonPanel,BorderLayout.SOUTH);
+        pack();
+    }
+
+    /**
+     * An example of a method - replace this comment with your own
+     * 
+     * @param  y   a sample parameter for a method
+     * @return     the sum of x and y 
+     */
+    public static void main(String[] args){
+        new Main();
+    }
+}
