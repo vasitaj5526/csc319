@@ -1,0 +1,86 @@
+import java.awt.*;
+import java.awt.event.*;
+import javax.swing.*;
+import javax.swing.JFrame;
+import javax.swing.JLabel;
+import javax.swing.JPanel;
+import java.awt.Font;
+import java.awt.BorderLayout;
+import java.awt.FlowLayout;
+import javax.swing.JMenuBar;
+import javax.swing.JMenu;
+import javax.swing.JMenuItem;
+import javax.swing.JButton;
+import java.awt.Color;
+import javax.swing.border.Border;
+import javax.swing.border.LineBorder;
+import javax.swing.border.TitledBorder;
+import javax.swing.ImageIcon;
+
+class artPanel extends JPanel{
+   private RandomTree Red;
+   private RandomTree Green;
+   private RandomTree Blue;
+   private static final int SIZE = 400;
+   public static final int NUM_COLOR_OPTIONS = 2;
+     
+  public artPanel(){
+   //  JPanel p1 = new JPanel(new FlowLayout(FlowLayout.LEFT, 20, 2));
+   // JButton jbtCenter = new JButton("Center");
+  //  jbtCenter.setForeground(Color.MAGENTA);
+  //  p1.add(jbtCenter);
+  //  add(p1);
+    setPreferredSize(new Dimension(SIZE, SIZE));
+    /////////////////////////อย่าลืมสร้าง Object ของ คลาสที่เค้าสร้างให้นะ ให้สร้าง FunctionRandom //////////////
+    Red= new FunctionRandom((int)(Math.random()*11+4),(int)(Math.random()*3));/// ค่าที่ใส่คือ level กับ random fucntion
+    Green = new FunctionRandom((int)(Math.random()*11+4),(int)(Math.random()*3));
+    Blue = new FunctionRandom((int)(Math.random()*11+4),(int)(Math.random()*3));
+    //////////////////////////////////////////////////////////////////////////////////////////////////       
+  }
+  public void printRandom(){
+    Red= new FunctionRandom((int)(Math.random()*11+4),(int)(Math.random()*3));/// ค่าที่ใส่คือ level กับ random fucntion
+    Green = new FunctionRandom((int)(Math.random()*11+4),(int)(Math.random()*3));
+    Blue = new FunctionRandom((int)(Math.random()*11+4),(int)(Math.random()*3));
+  }
+    
+  public void paint(Graphics g){
+    double gray  ;
+    for(int i = 0 ; i < 400 ; i++){
+      for(int j = 0 ; j < 400 ; j++){
+       double x = ((((double) i) / getWidth()) * 2.0) - 1.0;
+       double y = ((((double) j) / getHeight()) * 2.0) - 1.0;
+        
+      //  double red = Math.sin(Math.PI * avg((((Math.cos(Math.PI * (Math.sin(Math.PI * Math.cos(Math.PI * y)) * avg(avg(x, x), Math.sin(Math.PI * y)))) * avg(Math.sin(Math.PI * (Math.sin(Math.PI * y) * (y * x))), Math.cos(Math.PI * Math.cos(Math.PI * (y * y))))) * Math.sin(Math.PI * (Math.sin(Math.PI * (Math.sin(Math.PI * y) * Math.sin(Math.PI * y))) * Math.cos(Math.PI * ((y * y) * Math.sin(Math.PI * y)))))) * Math.sin(Math.PI * avg(Math.cos(Math.PI * avg(((y * x) * (x * x)), Math.sin(Math.PI * (y * x)))), Math.sin(Math.PI * avg(avg(Math.sin(Math.PI * x), avg(x, x)), Math.sin(Math.PI * avg(x, y))))))), Math.cos(Math.PI * Math.cos(Math.PI * avg(Math.sin(Math.PI * Math.sin(Math.PI * avg((x * x), (x * x)))), Math.sin(Math.PI * Math.sin(Math.PI * Math.sin(Math.PI * Math.sin(Math.PI * y)))))))));
+      //  double green = Math.sin(Math.PI * ((avg(avg(Math.cos(Math.PI * (Math.cos(Math.PI * Math.cos(Math.PI * x)) * (Math.cos(Math.PI * x) * avg(y, x)))), ((Math.cos(Math.PI * Math.cos(Math.PI * y)) * (Math.cos(Math.PI * x) * (x * y))) * Math.sin(Math.PI * Math.sin(Math.PI * avg(y, y))))), Math.cos(Math.PI * (avg(Math.sin(Math.PI * Math.sin(Math.PI * x)), Math.sin(Math.PI * Math.sin(Math.PI * x))) * Math.sin(Math.PI * Math.sin(Math.PI * (x * y)))))) * avg((avg(Math.cos(Math.PI * Math.sin(Math.PI * Math.cos(Math.PI * x))), avg((Math.sin(Math.PI * x) * Math.cos(Math.PI * y)), avg(Math.cos(Math.PI * x), Math.cos(Math.PI * x)))) * avg(avg(Math.sin(Math.PI * Math.cos(Math.PI * x)), Math.sin(Math.PI * Math.sin(Math.PI * x))), (avg(Math.cos(Math.PI * x), avg(y, x)) * avg(Math.sin(Math.PI * y), Math.sin(Math.PI * x))))), (Math.cos(Math.PI * Math.cos(Math.PI * (avg(y, y) * (y * x)))) * Math.cos(Math.PI * Math.cos(Math.PI * Math.sin(Math.PI * avg(x, x))))))) * Math.sin(Math.PI * avg(avg(Math.sin(Math.PI * Math.cos(Math.PI * Math.sin(Math.PI * Math.cos(Math.PI * x)))), avg(Math.sin(Math.PI * Math.cos(Math.PI * Math.cos(Math.PI * y))), ((Math.sin(Math.PI * y) * (x * y)) * Math.cos(Math.PI * (y * y))))), Math.cos(Math.PI * avg(((Math.cos(Math.PI * y) * (y * y)) * avg(Math.sin(Math.PI * y), Math.cos(Math.PI * y))), (((x * x) * avg(y, x)) * Math.cos(Math.PI * Math.sin(Math.PI * x)))))))));
+       // double blue = avg(Math.sin(Math.PI * (avg(Math.cos(Math.PI * avg((Math.cos(Math.PI * (x * x)) * Math.cos(Math.PI * (x * y))), avg(avg((x * x), avg(y, y)), avg(Math.cos(Math.PI * y), Math.cos(Math.PI * x))))), avg(avg(avg((Math.sin(Math.PI * y) * (x * y)), Math.sin(Math.PI * (x * x))), avg(((x * x) * Math.sin(Math.PI * y)), (avg(x, x) * Math.sin(Math.PI * y)))), avg((Math.cos(Math.PI * Math.sin(Math.PI * y)) * Math.cos(Math.PI * avg(x, x))), Math.sin(Math.PI * avg(Math.sin(Math.PI * y), Math.sin(Math.PI * y)))))) * Math.cos(Math.PI * avg(avg(avg(Math.sin(Math.PI * (x * x)), avg(Math.sin(Math.PI * y), Math.sin(Math.PI * x))), Math.cos(Math.PI * avg(Math.cos(Math.PI * y), avg(y, x)))), (((avg(x, y) * Math.cos(Math.PI * x)) * Math.cos(Math.PI * avg(y, x))) * avg(Math.cos(Math.PI * (y * x)), ((x * x) * (y * x)))))))), avg(((((Math.sin(Math.PI * Math.sin(Math.PI * avg(x, x))) * avg(avg(Math.sin(Math.PI * y), Math.sin(Math.PI * y)), avg(avg(x, x), Math.cos(Math.PI * y)))) * Math.sin(Math.PI * Math.sin(Math.PI * Math.sin(Math.PI * (y * y))))) * avg(Math.cos(Math.PI * avg(avg(avg(x, y), (y * x)), Math.cos(Math.PI * Math.sin(Math.PI * x)))), (Math.sin(Math.PI * Math.sin(Math.PI * Math.sin(Math.PI * x))) * Math.cos(Math.PI * ((y * y) * Math.cos(Math.PI * x)))))) * avg(Math.cos(Math.PI * Math.cos(Math.PI * Math.sin(Math.PI * Math.cos(Math.PI * avg(x, y))))), (Math.sin(Math.PI * (Math.cos(Math.PI * avg(y, x)) * Math.sin(Math.PI * Math.cos(Math.PI * x)))) * ((Math.sin(Math.PI * Math.cos(Math.PI * y)) * avg(avg(x, x), Math.cos(Math.PI * x))) * avg((Math.sin(Math.PI * x) * avg(y, x)), Math.sin(Math.PI * Math.sin(Math.PI * x))))))), ((Math.cos(Math.PI * Math.cos(Math.PI * (Math.sin(Math.PI * (y * y)) * Math.cos(Math.PI * Math.cos(Math.PI * x))))) * avg(Math.sin(Math.PI * avg(Math.cos(Math.PI * Math.sin(Math.PI * y)), (Math.cos(Math.PI * x) * avg(x, x)))), Math.cos(Math.PI * Math.cos(Math.PI * Math.cos(Math.PI * avg(x, y)))))) * Math.sin(Math.PI * (avg((Math.cos(Math.PI * (y * y)) * Math.cos(Math.PI * Math.sin(Math.PI * y))), avg(((x * x) * Math.sin(Math.PI * x)), Math.cos(Math.PI * Math.sin(Math.PI * y)))) * avg(Math.sin(Math.PI * (avg(y, x) * avg(x, x))), Math.cos(Math.PI * avg((y * y), avg(y, y)))))))));
+        //////////////////////////////////////////////////////////////////////////////////////////////////
+        //////// เปลี่ยนมาใช้ของเค้าดีกว่า ^^ //////////////////////////////////////
+           
+           double red = Red.returnColor(x,y);
+           double green = Green.returnColor(x,y);
+           double blue = Blue.returnColor(x,y);
+     
+        ////////////////////////////////////////////////////////////////////////////////////////////////////////
+       // gray = Math.sin(Math.PI * Math.sin(Math.PI * Math.sin(Math.PI * (Math.sin(Math.PI * Math.sin(Math.PI * Math.sin(Math.PI * Math.sin(Math.PI * Math.cos(Math.PI * y))))) * Math.cos(Math.PI * Math.sin(Math.PI * Math.cos(Math.PI * avg(Math.sin(Math.PI * y), (x * x)))))))));
+       // g.setColor(new Color((int)((gray+1)*255/2),(int)((gray+1)*255/2),(int)((gray+1)*255/2)));
+           g.setColor(new Color(color(red),color(green),color(blue))); 
+        g.fillRect(i,j,1,1);
+      }
+      // g.fillRect(50,50,200,200);
+    }
+  }
+  //เซตสี
+  public int color(double col){
+    col = col+1.0;
+   if (col < 0) {
+    col =col*( -1);
+   }
+  col =col/ 2.0;
+  int c = (int) (col * 255);
+  
+  if (c >= 255) {
+   c = 255;
+  }
+    return c;
+  }
+}
