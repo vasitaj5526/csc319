@@ -1,0 +1,106 @@
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import javax.swing.JFrame;
+import javax.swing.JLabel;
+import javax.swing.JPanel;
+import java.awt.Font;
+import java.awt.BorderLayout;
+import java.awt.FlowLayout;
+import javax.swing.JMenuBar;
+import javax.swing.JMenu;
+import javax.swing.JMenuItem;
+import javax.swing.JButton;
+import java.awt.Color;
+import javax.swing.border.Border;
+import javax.swing.border.LineBorder;
+import javax.swing.border.TitledBorder;
+import javax.swing.ImageIcon;
+
+public class testRandomartFromStandford extends JFrame{
+  private artPanel panel;
+  private JPanel panelDown;
+   
+  
+  public testRandomartFromStandford(){
+    setLayout(new BorderLayout());
+    panel = new artPanel();
+    add(panel,BorderLayout.CENTER); // บอกตำแหน่ง
+    
+    panelDown = new JPanel();
+    panelDown.setLayout(new FlowLayout());
+    
+    panelDown.add(buttomRandomLeft());
+    panelDown.add(buttomRandomRight());
+    add(panelDown,BorderLayout.SOUTH);//บอกตำแหน่ง
+    
+    setJMenuBar(tapMenuBar());
+    
+    /*setTitle("RandomArt Project");
+    setPreferredSize(new Dimension(400,400));
+    setVisible(true);
+    pack();
+    add(new artPanel());
+    setDefaultCloseOperation(EXIT_ON_CLOSE);
+    setLocationRelativeTo(null);*/
+    
+  }
+
+
+public JButton buttomRandomLeft(){
+    JButton shape = new JButton("Random Shape"); 
+    shape.setForeground(Color.BLUE);
+    shape.setToolTipText("This is the ramdom shape Button");
+    
+    shape.addActionListener(new ActionListener(){
+     // @overriden
+      
+      public void actionPerformed(ActionEvent e){
+        panel.printRandom();
+       repaint();
+    }
+    }); //anonymous class 
+    return shape;
+ }
+  public JButton buttomRandomRight(){
+    JButton color = new JButton("Function"); 
+    color.setForeground(Color.DARK_GRAY);
+    color.setToolTipText("This is the ramdom color Button");
+    return color;
+    
+ }
+  
+   public JMenuBar tapMenuBar() {
+        final int NUM_OPTIONS = artPanel.NUM_COLOR_OPTIONS;
+        JMenuBar menu = new JMenuBar();
+        final String label = "Home";
+        final String label2 = "Help";
+              
+        JMenu tab1 = new JMenu(label);
+        JMenu tab2 = new JMenu(label2);
+    
+        menu.add(tab1);
+        menu.add(tab2);
+        for(int i = 1; i < NUM_OPTIONS; i++) {
+            JMenuItem temp2 = tab1.add("Function");
+            JMenuItem temp = tab1.add("Exit");
+           
+         }
+         for(int i = 1; i < NUM_OPTIONS; i++) {
+            JMenuItem temp = tab2.add("About Project");
+            JMenuItem temp2 = tab2.add(" About");
+         }
+        return menu;
+    }
+  
+  public static void main(String[] args){
+    testRandomartFromStandford frame = new testRandomartFromStandford();
+    frame.setVisible(true);
+    frame.setTitle("CSC 319 OOP");
+    frame.setSize(400, 400);
+    frame.setDefaultCloseOperation(EXIT_ON_CLOSE);
+    frame.setLocationRelativeTo(null);
+  }
+}
+
+
+
