@@ -1,0 +1,7 @@
+public abstract class RandomTree{
+   
+  public abstract double returnColor(double x, double y);
+  
+  public abstract String returnString();
+  
+}
