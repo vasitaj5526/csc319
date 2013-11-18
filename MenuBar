@@ -1,0 +1,62 @@
+import java.awt.*;
+
+import javax.swing.*;
+import javax.swing.border.Border;
+import javax.swing.border.LineBorder;
+import javax.swing.border.TitledBorder;
+import javax.swing.JMenuBar;
+
+public class TestSwingFeatures extends JFrame{
+ 
+ public TestSwingFeatures()
+ {
+  JPanel p1 = new JPanel(new FlowLayout(FlowLayout.CENTER, 20, 10));
+  JButton color = new JButton("Random Color");
+  JButton shape = new JButton("Random Shape");   
+  color.setForeground(Color.MAGENTA);//ฟอนด์ด้านหน้าจะหลายเป็นม่วง
+  shape.setForeground(Color.BLUE);//ฟอนด์ด้านหน้าจะหลายเป็นม่วง
+  color.setToolTipText("This is the ramdom color Button");//เวลาเอาเม้าไปชี้
+  shape.setToolTipText("This is the ramdom shape Button");
+  p1.add(color);
+  p1.add(shape);
+  p1.setBorder(new TitledBorder("RandomArt Project"));
+  setJMenuBar(tapMenuBar());
+  add(p1);
+ }
+ 
+  
+
+ public static void main(String[] args) {
+  TestSwingFeatures frame = new TestSwingFeatures();
+  frame.setVisible(true);
+  frame.setTitle("CSC 319 OOP");
+  frame.setSize(400, 400);
+  frame.setDefaultCloseOperation(EXIT_ON_CLOSE);
+  frame.setLocationRelativeTo(null);
+ }
+ 
+ 
+ public JMenuBar tapMenuBar() {
+        final int NUM_OPTIONS = ArtPanel.NUM_COLOR_OPTIONS;
+        JMenuBar menu = new JMenuBar();
+        final String label = "Home";
+        final String label2 = "Help";
+              
+        JMenu eiei = new JMenu(label);
+        JMenu eiei2 = new JMenu(label2);
+    
+        menu.add(eiei);
+        menu.add(eiei2);
+        for(int i = 1; i < NUM_OPTIONS; i++) {
+            JMenuItem temp2 = eiei.add("Function");
+            JMenuItem temp = eiei.add("Exit");
+         }
+         for(int i = 1; i < NUM_OPTIONS; i++) {
+            JMenuItem temp = eiei2.add("About Project");
+            JMenuItem temp2 = eiei2.add(" About");
+            
+         }
+         
+        return menu;
+    }
+}
