@@ -1,0 +1,48 @@
+public class FunctionRandom extends RandomTree{
+  private RandomTree  tree;
+  private double colorvalue;
+  private int func;
+ private RandomTree tree2;
+private static double PI = 3.14;
+   public FunctionRandom(int level,int func){
+    
+     this.func=func;
+      int function = (int)(Math.random()*4); // แรนด้อมฟังชั่นตัวถัดไป เท่าที่มี ตอนนี้มีอยู่แค่ 3 ถ้ามีเพิ่มก็ใส่เพิ่ม
+    if(level>1){       
+      tree = new FunctionRandom(level-1,function);// Level ก็ขึ้นอยู่กับ กี่รอบก็ว่ากันไป
+      tree2 = new FunctionRandom(level-1,function);
+    }else{
+      int randomXY = (int)(Math.random()*2);
+      tree = new XandY(randomXY);
+      tree2 = new XandY(randomXY);
+    }
+  }
+  
+  public double returnColor(double x,double y){
+    if(func==0){
+      colorvalue = Math.sin(PI*(tree.returnColor(x,y))); /// เนี่ยแบบนี้แหละที่แรนด้อม *x
+     
+    }else if(func==1){
+      colorvalue = Math.cos(PI*x*(tree.returnColor(x,y))); //*y
+  
+    }else if(func==2){
+      colorvalue = (tree.returnColor(x,y)+tree2.returnColor(x,y))/2;
+   
+    }else if(func==3){
+      colorvalue = Math.abs(PI*(tree.returnColor(x,y)));
+      /// อยากใส่อะไรเพิ่มก็ใส่ได้เลยนะ ^^ Avarage ต้องสร้างขึ้นมาเองโดยการนำเอา X + y /2 ง่ายๆ
+    //colorvalue =  tree.returnColor(x,y)/2;
+    }
+    else if(func==4){
+      colorvalue = Math.round(PI*(tree.returnColor(x,y)));
+    }
+    return colorvalue;
+  
+  }
+  
+  public String returnString(){
+    
+    return " ";
+  }
+  
+}
