@@ -1,0 +1,20 @@
+public class XandY extends RandomTree{
+ private int lock;
+  public XandY(int lock){
+     this.lock = lock;
+  }
+  
+  public double returnColor(double x,double y){
+    double color = 0 ;
+    if(lock==0){
+       color = x;
+    }else if(lock==1){
+       color = y;
+    }
+    return color;
+  }
+  
+  public String returnString(){
+    return " ";
+  }
+}
