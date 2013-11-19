@@ -1,0 +1,10 @@
+#BlueJ class context
+comment0.params=color
+comment0.target=ArtPanel(int)
+comment0.text=\r\n\ Constructor\ for\ objects\ of\ class\ ArtPanel\r\n
+comment1.params=g
+comment1.target=void\ paint(java.awt.Graphics)
+comment2.params=
+comment2.target=java.lang.String[]\ getFunction()
+comment2.text=\r\n\ \ \ \ public\ void\ closePopup(){\r\n\ \ \ \ \ \ \ \ popup.setVisible(false);\r\n}
+numComments=3

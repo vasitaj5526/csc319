@@ -1,0 +1,12 @@
+#BlueJ class context
+comment0.params=
+comment0.target=Main()
+comment0.text=\n\ Constructor\ for\ objects\ of\ class\ Main\n
+comment1.params=numOfColor
+comment1.target=Main(int)
+comment2.params=args
+comment2.target=void\ main(java.lang.String[])
+comment2.text=\n\ An\ example\ of\ a\ method\ -\ replace\ this\ comment\ with\ your\ own\n\ \n\ @param\ \ y\ \ \ a\ sample\ parameter\ for\ a\ method\n\ @return\ \ \ \ \ the\ sum\ of\ x\ and\ y\ \n
+comment3.params=
+comment3.target=javax.swing.JMenuBar\ newMenuBar()
+numComments=4

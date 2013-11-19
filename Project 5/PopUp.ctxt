@@ -1,0 +1,7 @@
+#BlueJ class context
+comment0.params=function
+comment0.target=PopUp(java.lang.String[])
+comment0.text=\r\n\ Constructor\ for\ objects\ of\ class\ PopUp\r\n
+comment1.params=
+comment1.target=void\ closePopup()
+numComments=2

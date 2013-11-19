@@ -16,7 +16,8 @@ public class Main extends JFrame
     private JPanel buttonPanel;
     private JButton color;
     private JButton gray;
- 
+    private JButton function;
+    private PopUp popup;
     /**
      * Constructor for objects of class Main
      */
@@ -33,22 +34,24 @@ public class Main extends JFrame
             ,(((int)java.awt.Toolkit.getDefaultToolkit().getScreenSize().getWidth())/2)-600);
         color = new JButton("Random Color");
         gray = new JButton("Random Gray");
+        function = new JButton("Function");
         menu = new Menu();
-        setBackground(Color.BLACK);
         mainPanel = new ArtPanel(numOfColor);
         buttonPanel = new JPanel();
-         
-        buttonPanel.setBackground(Color.YELLOW);
-        
         color.setToolTipText("Click for ramdom a new color");
         gray.setToolTipText("Click for ramdom a new gray tone");
-        color.setForeground(Color.BLUE);
-        gray.setForeground(Color.RED);
+        function.setToolTipText("Show the function of random");
+        color.setForeground(Color.RED);
+        gray.setForeground(Color.MAGENTA);
+        function.setForeground(Color.MAGENTA);
         
+         buttonPanel.setBackground(Color.PINK);
         buttonPanel.add(gray);
         buttonPanel.add(color);
+        buttonPanel.add(function);
         color.addActionListener(new ColorButtonListener()); 
         gray.addActionListener(new GrayButtonListener()); 
+        function.addActionListener(new FunctionButtonListener()); 
         setVisible(true);
         setJMenuBar(newMenuBar());
         add(mainPanel,BorderLayout.CENTER);
@@ -56,8 +59,6 @@ public class Main extends JFrame
         pack();
     }
     
-          
- 
 
     /**
      * An example of a method - replace this comment with your own
@@ -77,6 +78,8 @@ public class Main extends JFrame
         menuBar.add(menu);
         menu.add(about);
         menu.add(member);
+        menuBar.setBackground(new Color(255,152,204));
+        menu.setForeground(new Color(0,0,0));
         return menuBar;
     }
     
@@ -84,8 +87,11 @@ public class Main extends JFrame
          private class ColorButtonListener implements ActionListener {
              public void actionPerformed(ActionEvent e){
                  setVisible(false);
-                 mainPanel.closePopup();
+                 if(popup != null)popup.closePopup();
                  new Main(3);
+                 //mainPanel = new ArtPanel(1);
+                 //add(mainPanel,BorderLayout.CENTER);
+                 //mainPanel.repaint();
                  
                 }
             }
@@ -93,8 +99,16 @@ public class Main extends JFrame
         private class GrayButtonListener implements ActionListener {
             public void actionPerformed(ActionEvent e){
                 setVisible(false);
-                mainPanel.closePopup();
+                if(popup != null)popup.closePopup();
                 new Main(1);
+                //mainPanel = new ArtPanel(1);
+                //mainPanel.repaint();
+            }
+        }
+        
+        private class FunctionButtonListener implements ActionListener {
+            public void actionPerformed(ActionEvent e){
+                popup = new PopUp(mainPanel.getFunction());
             }
         }
         

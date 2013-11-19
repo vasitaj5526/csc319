@@ -1,0 +1,23 @@
+#BlueJ class context
+comment0.params=
+comment0.target=Random()
+comment0.text=\r\n\ Constructor\ for\ objects\ of\ class\ Random\r\n
+comment1.params=x\ y
+comment1.target=double\ getResult(double,\ double)
+comment2.params=
+comment2.target=void\ generateExpression()
+comment3.params=x\ y
+comment3.target=double\ getResultFromQueue(double,\ double)
+comment4.params=num
+comment4.target=double\ sin(double)
+comment5.params=num
+comment5.target=double\ cos(double)
+comment6.params=x\ y
+comment6.target=double\ multiply(double,\ double)
+comment7.params=x\ y
+comment7.target=double\ avg(double,\ double)
+comment8.params=
+comment8.target=void\ updateLength()
+comment9.params=
+comment9.target=java.lang.String\ toString()
+numComments=10
